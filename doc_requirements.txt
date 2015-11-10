@@ -1,0 +1,6 @@
+setuptools==1.1
+sphinx
+pymongo==2.8
+motor
+six
+easydict
