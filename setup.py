@@ -20,14 +20,14 @@ tests_require = [
 setup(
     name='aiomotorengine',
     version=__version__,
-    description='MotorEngine is a port of the amazing MongoEngine Mapper. Instead of using pymongo, MotorEngine uses Motor.',
+    description='AIOMotorEngine is an asynchronous MongoDB ORM. AIOMotorEngine uses Asyncio\'s event loop and Motor as a driver.',
     long_description='''
-MotorEngine is a port of the amazing MongoEngine Mapper. Instead of using pymongo, MotorEngine uses Motor.
+AIOMotorEngine is an asynchronous MongoDB ORM. AIOMotorEngine uses Asyncio's event loop and Motor as a driver.
 ''',
     keywords='database mongodb asyncio python',
-    author='Bernardo Heynemann',
+    author='ilex',
     # author_email='heynemann@gmail.com',
-    # url='http://github.com/heynemann/aiomotorengine/',
+    url='http://github.com/ilex/aiomotorengine/',
     license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',
