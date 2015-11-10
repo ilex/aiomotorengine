@@ -12,6 +12,8 @@
 
 import sys  # NOQA
 import os  # NOQA
+sys.path.insert(0, os.path.abspath('../..'))
+
 from aiomotorengine import __version__
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -42,7 +44,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'aiomotorengine'
-copyright = u'2013, Bernardo Heynemann'
+copyright = u'2015'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -184,8 +186,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-    ('index', 'aiomotorengine.tex', u'motorengine Documentation',
-        u'Bernardo Heynemann', 'manual'),
+    ('index', 'aiomotorengine.tex', u'aiomotorengine Documentation',
+        u'ilex', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -215,7 +217,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'aiomotorengine', u'motorengine Documentation',
-     [u'Bernardo Heynemann'], 1)
+     [u'ilex'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -228,8 +230,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'aiomotorengine', u'motorengine Documentation',
-        u'Bernardo Heynemann', 'aiomotorengine', 'One line description of project.',
+    ('index', 'aiomotorengine', u'aiomotorengine Documentation',
+        u'ilex', 'aiomotorengine', 'One line description of project.',
         'Miscellaneous'),
 ]
 

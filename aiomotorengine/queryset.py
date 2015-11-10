@@ -305,12 +305,13 @@ class QuerySet(object):
         Filters a queryset to negate all the filters passed in subsequent queries.
 
         Usage::
+
             objects = User.objects.filter_not(first_name="Bernardo")
             objects = objects.filter_not(last_name="Bernardo")
             users = await objects.find_all()
             # or
             objects = User.objects.filter_not(
-                first_name="Bernardo", starting_year__gt=2010
+            first_name="Bernardo", starting_year__gt=2010
             )
             users = await objects.find_all()
 
