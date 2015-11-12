@@ -136,14 +136,15 @@ class Aggregation(object):
 
     async def fetch(self, alias=None):
         coll = self.queryset.coll(alias)
+        results = []
         try:
-            result = await coll.aggregate(self.to_query())
+            # from motor-0.5 coll.aggregate return AsyncIOMotorAggregateCursor
+            # and can be used in async for
+            async for item in coll.aggregate(self.to_query()):
+                self.fill_ids(item)
+                results.append(edict(item))
         except Exception as e:
             raise RuntimeError('Aggregation failed due to: %s' % str(e))
-        results = []
-        for item in result['result']:
-            self.fill_ids(item)
-            results.append(edict(item))
         return results
 
     @classmethod
