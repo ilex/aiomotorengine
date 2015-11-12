@@ -4,10 +4,6 @@ Getting Started
 Installing
 ----------
 
-Before installing AIOMotorEngine you should install the latest Motor asynchronous MongoDB driver::
-
-    $ pip install https://github.com/mongodb/motor/archive/master.zip#egg=motor-0.5.dev0
-
 AIOMotorEngine can be installed with pip, using::
 
     $ pip install https://github.com/ilex/aiomotorengine/archive/master.zip 

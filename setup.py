@@ -45,12 +45,11 @@ AIOMotorEngine is an asynchronous MongoDB ORM. AIOMotorEngine uses Asyncio's eve
     include_package_data=True,
     install_requires=[
         'pymongo==2.8',
-        'motor==0.5.dev0',
+        'motor==0.5b0',
         'six',
         'easydict'
     ],
-    dependency_links=[
-        'https://github.com/mongodb/motor/archive/master.zip#egg=motor-0.5.dev0'
+    dependency_links=[  # 'https://github.com/mongodb/motor/archive/master.zip#egg=motor-0.5.dev0'
     ],
     use_2to3=True,
     extras_require={
