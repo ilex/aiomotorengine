@@ -17,6 +17,7 @@ Modeling
 .. py:module:: aiomotorengine.fields.decimal_field
 .. py:module:: aiomotorengine.fields.binary_field
 .. py:module:: aiomotorengine.fields.json_field
+.. py:module:: aiomotorengine.fields.password_field
 
 AIOMotorEngine uses the concept of models to interact with MongoDB. To create a model we inherit from the `Document` class:
 
@@ -123,6 +124,8 @@ Available Fields
 .. autoclass:: aiomotorengine.fields.binary_field.BinaryField
 
 .. autoclass:: aiomotorengine.fields.json_field.JsonField
+
+.. autoclass:: aiomotorengine.fields.password_field.PasswordField
 
 Multiple Value Fields
 ---------------------

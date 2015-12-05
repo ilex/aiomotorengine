@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 from preggy import expect
 
 from aiomotorengine import StringField

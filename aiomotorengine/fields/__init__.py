@@ -13,3 +13,4 @@ from aiomotorengine.fields.float_field import FloatField  # NOQA
 from aiomotorengine.fields.decimal_field import DecimalField  # NOQA
 from aiomotorengine.fields.binary_field import BinaryField  # NOQA
 from aiomotorengine.fields.json_field import JsonField  # NOQA
+from aiomotorengine.fields.password_field import PasswordField  # NOQA
