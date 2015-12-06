@@ -18,6 +18,9 @@ Modeling
 .. py:module:: aiomotorengine.fields.binary_field
 .. py:module:: aiomotorengine.fields.json_field
 .. py:module:: aiomotorengine.fields.password_field
+.. py:module:: aiomotorengine.fields.geojson.point_field
+.. py:module:: aiomotorengine.fields.geojson.line_string_field
+.. py:module:: aiomotorengine.fields.geojson.polygon_field
 
 AIOMotorEngine uses the concept of models to interact with MongoDB. To create a model we inherit from the `Document` class:
 
@@ -142,3 +145,10 @@ On the other hand, if you need a connection to the current document that won't b
 .. autoclass:: aiomotorengine.fields.embedded_document_field.EmbeddedDocumentField
 
 .. autoclass:: aiomotorengine.fields.reference_field.ReferenceField
+
+GeoJson Fields
+--------------
+
+.. autoclass:: aiomotorengine.fields.geojson.point_field.PointField
+.. autoclass:: aiomotorengine.fields.geojson.line_string_field.LineStringField
+.. autoclass:: aiomotorengine.fields.geojson.polygon_field.PolygonField

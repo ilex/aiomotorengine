@@ -14,3 +14,6 @@ from aiomotorengine.fields.decimal_field import DecimalField  # NOQA
 from aiomotorengine.fields.binary_field import BinaryField  # NOQA
 from aiomotorengine.fields.json_field import JsonField  # NOQA
 from aiomotorengine.fields.password_field import PasswordField  # NOQA
+from aiomotorengine.fields.geojson.line_string_field import LineStringField  # NOQA
+from aiomotorengine.fields.geojson.point_field import PointField  # NOQA
+from aiomotorengine.fields.geojson.polygon_field import PolygonField  # NOQA
