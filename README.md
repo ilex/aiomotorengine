@@ -13,4 +13,4 @@ To install `AIOMotorEngine` use `pip`:
 Documentation
 -------------
 
-Find out more by reading [aiomotorengine documentation](http://ilex.org.ua/media/projects/aiomotorengine/docs/index.html).
+Find out more by reading [aiomotorengine documentation](http://aiomotorengine.readthedocs.io/en/latest/).
