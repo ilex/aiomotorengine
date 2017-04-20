@@ -4,8 +4,12 @@ from nose.tools import eq_, ok_, raises
 from nose.tools import assert_not_equal as ne_
 
 from aiomotorengine import Document, PasswordField
-from aiomotorengine.fields.password_field import md5, PasswordType
+from aiomotorengine.fields.password_field import md5, sha256, PasswordType
 from tests import AsyncTestCase, async_test
+
+
+HASH_XXX = ('cd2eb0837c9b4c962c22d2ff8b5441b7'
+            'b45805887f051d39bf133b583baf6860')
 
 
 class User(Document):
@@ -18,15 +22,18 @@ class TestPasswordType(unittest.TestCase):
     def test_md5(self):
         eq_(md5('xxx'), 'f561aaf6ef0bf14d4208bb46a4ccb3ad')
 
+    def test_sha256(self):
+        eq_(sha256('xxx'), HASH_XXX)
+
     def test_password_type(self):
-        x = PasswordType('xxx', crypt_func=md5, is_crypted=False)
-        eq_(x.value, 'f561aaf6ef0bf14d4208bb46a4ccb3ad')
+        x = PasswordType('xxx', crypt_func=sha256, is_crypted=False)
+        eq_(x.value, HASH_XXX)
         eq_(x, 'xxx')
         ne_(x, 'yyy')
         ne_(x, 5)
 
         y = PasswordType(
-            'f561aaf6ef0bf14d4208bb46a4ccb3ad', crypt_func=md5, is_crypted=True
+            HASH_XXX, crypt_func=sha256, is_crypted=True
         )
         eq_(y, 'xxx')
         eq_(y, x)
@@ -48,16 +55,16 @@ class TestPasswordField(AsyncTestCase):
 
         son = u.to_son()
         ok_('password' in son)
-        eq_(son['password'], 'f561aaf6ef0bf14d4208bb46a4ccb3ad')
+        eq_(son['password'], HASH_XXX)
 
     def test_password_field_to_son(self):
         field = PasswordField()
 
         value = field.to_son(PasswordType('xxx'))
-        eq_(value, 'f561aaf6ef0bf14d4208bb46a4ccb3ad')
+        eq_(value, HASH_XXX)
 
         value = field.to_son('xxx')
-        eq_(value, 'f561aaf6ef0bf14d4208bb46a4ccb3ad')
+        eq_(value, HASH_XXX)
 
     @raises(TypeError)
     def test_password_field_to_son_wrong_value(self):
@@ -87,7 +94,8 @@ class TestPasswordField(AsyncTestCase):
         eq_(user2.password, user.password)
 
         # test string representation
-        eq_(str(user2.password), 'f561aaf6ef0bf14d4208bb46a4ccb3ad')
+
+        eq_(str(user2.password), HASH_XXX)
 
         # change password with new and save
         user2.password = 'yyy'
