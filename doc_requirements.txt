@@ -1,4 +1,4 @@
-setuptools==1.1
+setuptools==78.1.1
 sphinx
 pymongo==2.8
 motor
